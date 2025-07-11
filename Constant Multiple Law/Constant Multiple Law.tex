@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm, sectsty}
+\begin{document}
+	
+\textbf{Constant Multiple Law}
+	
+\section*{Claim: $\lim_{x \to a} \left( a \cdot f(x) \right) = a \cdot \lim_{x \to a} f(x)$}
+
+
+\begin{proof}
+
+
+Using the $\varepsilon$–$\delta$ definition, we will prove that:
+\[
+\lim_{x \to a} \left( a \cdot f(x) \right) = a \cdot \lim_{x \to a} f(x)
+\]
+
+
+First, let us recall the $\varepsilon$–$\delta$ definition:
+\[
+\forall \varepsilon > 0, \ \exists \delta > 0 \text{ such that } 0 < |x - a| < \delta \Rightarrow \left|f(x) - L\right| < \varepsilon.
+\]                                                                                                                                   
+
+Since $\lim_{x \to a} f(x) = L$, this is the same as saying $\lim_{x \to a} a f(x) = a \lim_{x \to a} f(x) = aL$ in our case. Then to prove our claim, we must satisfy these cases:
+\[
+1.   \forall \varepsilon1 > 0, \ \exists \delta1 > 0 \text{ such that } 0 < |x - a| < \delta1 \Rightarrow \left|a f(x) - aL\right| < \varepsilon1.
+\]
+\[
+2.   \forall \varepsilon2 > 0, \ \exists \delta2 > 0 \text{ such that } 0 < |x - a| < \delta2 \Rightarrow \left|a\left[f(x) - L\right]\right| < \varepsilon2.
+\]
+
+
+Suppose we re-arrange $\left|a\left[f(x) - L\right]\right|$, then:
+\[
+\left|a\left[f(x) - L\right]\right| \Rightarrow \left|a f(x) - aL\right|
+\]
+
+
+Then we need only satisfy that:
+\[
+1.   \forall \varepsilon1 > 0, \ \exists \delta1 > 0 \text{ such that } 0 < |x - a| < \delta1 \Rightarrow \left|a f(x) - aL\right| < \varepsilon1.
+\]
+
+
+Re-distributing the absolute value we get:
+\[
+\left| a \right| \left| f(x) - L \right| < \varepsilon
+\]
+
+
+It follows that $\left| f(x) - L \right| < \frac{\varepsilon}{\left| a \right|}$. So let $\delta = \frac{\varepsilon}{|a|}$, such that:
+\[
+|a f(x) - a L| < \frac{\varepsilon}{|a|} \implies |f(x) - L| < \varepsilon
+\]
+
+
+Thus, for every $\varepsilon > 0$, there exists some $\delta > 0$ such that if $0 < |x - a| < \delta$ then
+\[
+|a (f(x) - L)| < \varepsilon \quad \text{and} \quad |a f(x) - a L| < \varepsilon.
+\]
+
+
+Hence, we can conclude that for every $\varepsilon > 0$, there exists some $\delta > 0$ such that if $0 < |x - a| < \delta$, then:
+\[
+\lim_{x \to a} a f(x) = a \lim_{x \to a} f(x) = a L.
+\]
+
+
+
+
+
+\end{proof}
+\end{document}
