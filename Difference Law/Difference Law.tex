@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm, sectsty}
+\begin{document}
+
+\textbf{Limit Difference Law}
+
+\section*{Claim: $\lim_{x \to a} [f(x) - g(x)] = \lim_{x \to a} f(x) - \lim_{x \to a} g(x)$}
+
+	
+\begin{proof}
+
+
+Using the $\varepsilon$–$\delta$ definition, we will prove that: 
+\[
+\lim_{x \to a} [f(x) - g(x)] = \lim_{x \to a} f(x) - \lim_{x \to a} g(x)
+\]
+
+
+First, let us recall the $\varepsilon$–$\delta$ definition:
+\[
+\forall \varepsilon > 0, \ \exists \delta > 0 \text{ such that } 0 < |x - a| < \delta \Rightarrow \left| [f(x) + g(x)] - [L + M] \right| < \varepsilon.
+\]
+
+
+Then to prove our claim, we must find some $\delta > 0$ such that $0 < |x - a| < \delta$ using our givens. According to the $\varepsilon$–$\delta$ definition that $\left|f(x) - L\right| < \varepsilon$. In our case case: 
+\[
+\left| [f(x) - g(x)] - \left[\lim_{x \to a} f(x) - \lim_{x \to a} g(x) \right] \right| < \varepsilon
+\]
+
+
+Let us re-arrange this by distributing the difference of factors, such that:
+\[
+\left| f(x) - \lim_{x \to a} f(x) - g(x) + \lim_{x \to a} g(x) \right| < \varepsilon
+\]
+
+
+Then by re-arranging the absolute values:
+\[
+\left| f(x) - \lim_{x \to a} f(x) \right| - \left| g(x) - \lim_{x \to a} g(x) \right| < \varepsilon
+\]
+
+
+Given the $\varepsilon$--$\delta$ definition, consider an arbitrary limit. For every $\varepsilon > 0$, there exists some $\delta > 0$ such that if $0 < |x - a| < \delta$, then $|f(x) - L| < \varepsilon$. It follows that $\lim_{x \to a} f(x) = L$.
+
+
+Then we can re-express our equality using the fact that:
+\[
+\lim_{x \to a} f(x) = L \quad \text{and} \quad \lim_{x \to a} g(x) = M.
+\]
+
+
+This allows us to easily bound our factors to control them. Then there exists some $\delta_1 > 0$ such that if $0 < |x - c| < \delta_1$, then $|f(x) - L| < \varepsilon$.  
+
+
+Similarly, there exists some $\delta_2 > 0$ such that if $0 < |x - c| < \delta_2$, then $|g(x) - M| < \varepsilon$. Let $\delta_1 = \frac{\varepsilon}{2}$ and $\delta_2 = \frac{\varepsilon}{2}$. Meaning, $\delta = \min(\delta_1, \delta_2)$, so let $\delta = \frac{\varepsilon}{2}$. So it follows that:
+\[
+|f(x) - L| + |g(x) - M| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+\]
+
+
+It clearly follows:
+\[
+\left| [f(x) - g(x)] - \left[\lim_{x \to a} f(x) - \lim_{x \to a} g(x) \right] \right| < \varepsilon
+\]
+
+
+Hence, we can conclude that for every $\varepsilon > 0$, there exists some $\delta > 0$ such that if $0 < |x - a| < \delta$, then: 
+\[
+\left| [f(x) - g(x)] - \left[\lim_{x \to a} f(x) - \lim_{x \to a} g(x) \right] \right| < \varepsilon
+\]
+
+
+\end{proof}
+\end{document}

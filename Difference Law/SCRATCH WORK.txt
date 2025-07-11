@@ -1,0 +1,34 @@
+Claim: lim x->a [f(x)-g(x)] = lim x->a f(x) - lim x->a g(x)
+
+Proof
+
+We will directly prove that lim x->a [f(x)-g(x)] = lim x->a f(x) - lim x->a g(x) using the ε–δ definition.
+
+Consider lim x->a [f(x) - g(x)].
+Given for every ε>0, there exists some δ>0.
+Such that if 0 < |x-a| < δ then | [f(x)-g(x)] - [lim x->a f(x) - lim x->a g(x)] | < ε.
+Formally denoted: ∀e>0, ∃δ>0 s.t. 0 < |x-a| < δ then | [f(x)-g(x)] - [lim x->a f(x) - lim x->a g(x)] | < ε.
+Then we must find such a delta with the information given.
+
+First, let | [f(x)-g(x)] - [lim x->a f(x) - lim x->a g(x)] | < ε.
+Re-arranging this by distributing the difference we get:
+| f(x) - lim x->a f(x) - g(x)  +  lim x->a g(x) | < e.
+Then by re-arranging the absolute values we get:
+| f(x) - lim x->a f(x) | - | g(x) - lim x->a g(x) | < e.
+Given the ε–δ definition, we know that for an aribtrary limit, lim x->a f(x) = L and lim x->a g(x) = M.
+Then we can reexpress this as:
+| f(x) - L| - | g(x) - M | < e.
+
+This allows us to easily bound our factors to control them.
+For some arbitrary limit, there exists some δ1>0 where if 0 < |x-c| < δ1 then | f(x)-L | < e
+And there exists some δ2>0 where if 0 < |x-c| < δ2 then | g(x) - M || < e
+So let δ1 = e/2 and δ2 = e/2. Such that our δ = min(e/2, e/2), then δ = e/2.
+
+So it follows that:
+| f(x) - L| - | g(x) - M | < e/2 + e/2 = e.
+Thus, | [f(x)-g(x)] - [lim x->a f(x) - lim x->a g(x)] | < ε.
+
+Hence, we can conclude that for every e>0, there exists some δ>0 s.t. if 0 < |x-a| < δ then | [f(x)-g(x)] - [lim x->a f(x) - lim x->a g(x)] | < ε.
+
+Q.E.D
+
