@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm, sectsty}
+\begin{document}
+	
+\textbf{Limit Sum Law}
+\section*{Claim: $lim_{x \to a} [f(x) + g(x)] = L + M$}
+
+\begin{proof}
+
+Using the $\varepsilon$–$\delta$ definition, we will prove that: 
+\[
+\lim_{x \to a} [f(x) + g(x)] = L + M
+\]
+
+First, let us recall the $\varepsilon$–$\delta$ definition:
+\[
+\forall \varepsilon > 0, \ \exists \delta > 0 \text{ such that } 0 < |x - a| < \delta \Rightarrow \left| [f(x) + g(x)] - [L + M] \right| < \varepsilon.
+\]
+
+Then to prove our claim, we must find some $\delta > 0$ such that $0 < |x - a| < \delta$ using our givens. According to the $\varepsilon$–$\delta$ definition that $\left|f(x) - L\right| < \varepsilon$. So in our case, $\left|[f(x) + g(x)] - [L + M]\right| < \varepsilon$.
+Now consider the triangle inequality:
+\[
+|a + b| \leq |a| + |b|
+\]
+Re-arranging the components of our given found earlier, we get:
+\[
+\left| f(x) - L + g(x) + M \right|
+\]
+
+
+This re-arrangement allows us to easily choose values to replace the arbitrary variables in the theorem's definition, so let:
+\[
+a = f(x) - L \quad \text{and} \quad b = g(x) - M
+\]
+
+
+Then it follows according to the triangle inequality:
+\[
+\left| [f(x) + g(x)] - [L + M] \right| \leq |f(x) - L| + |g(x) - M| < \varepsilon
+\]
+
+
+With some interval in place, we can control each term.
+Consider the $\varepsilon$–$\delta$ definition and an arbitrary $\varepsilon > 0$. It follows that: 
+\[
+|f(x) - L| < \varepsilon \quad \text{and} \quad |g(x) - M| < \varepsilon
+\]
+
+
+Since the sum of the absolute differences satisfies that:
+\[
+|f(x) - L| + |g(x) - M| < \varepsilon
+\]
+
+
+Then by the triangle inequality:
+\[
+|f(x) - L| < \frac{\varepsilon}{2} \quad \text{and} \quad |g(x) - M| < \frac{\varepsilon}{2}
+\]
+
+
+Ensuring that:
+\[
+\left| [f(x) + g(x)] - [L + M] \right| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+\]
+
+
+So let $\delta = \frac{\varepsilon}{2}$ such that:
+\[
+\left| [f(x) + g(x)] - [L + M] \right| \leq \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+\]
+
+Thus, we proved that for every $\varepsilon > 0$, there exists a $\delta > 0$ such that if $0 < |x - a| < \delta$, then $\left| [f(x) + g(x)] - [L + M] \right| < \varepsilon$.
+Hence, we can conclude that $\lim_{x \to a} [f(x) + g(x)] = L + M$.
+
+\end{proof}
+\end{document}
