@@ -2,7 +2,7 @@
 \usepackage{amsmath, amssymb, amsthm, sectsty}
 \begin{document}
 	
-\textbf{Limit Sum Law}
+\textbf{Sum Law}
 \section*{Claim: $lim_{x \to a} [f(x) + g(x)] = L + M$}
 
 \begin{proof}
@@ -14,7 +14,7 @@ Using the $\varepsilon$–$\delta$ definition, we will prove that:
 
 First, let us recall the $\varepsilon$–$\delta$ definition:
 \[
-\forall \varepsilon > 0, \ \exists \delta > 0 \text{ such that } 0 < |x - a| < \delta \Rightarrow \left| [f(x) + g(x)] - [L + M] \right| < \varepsilon.
+\forall \varepsilon > 0, \ \exists \delta > 0 \text{ such that } 0 < |x - a| < \delta \Rightarrow \left|f(x) - L\right| < \varepsilon.
 \]
 
 Then to prove our claim, we must find some $\delta > 0$ such that $0 < |x - a| < \delta$ using our givens. According to the $\varepsilon$–$\delta$ definition that $\left|f(x) - L\right| < \varepsilon$. So in our case, $\left|[f(x) + g(x)] - [L + M]\right| < \varepsilon$.
