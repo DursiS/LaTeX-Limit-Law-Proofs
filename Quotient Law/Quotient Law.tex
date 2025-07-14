@@ -1,0 +1,128 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm, sectsty}
+\begin{document}
+	
+\textbf{Quotient Law}
+	
+\section*{Claim: $\lim \left[ \frac{f(x)}{g(x)} \right] = \frac{\lim f(x)}{\lim g(x)}$}
+	
+	
+\begin{proof}
+
+
+Using the $\varepsilon$–$\delta$ definition, we will prove that:
+\[
+\lim \left[ \frac{f(x)}{g(x)} \right] = \frac{\lim f(x)}{\lim g(x)}
+\]
+
+	
+
+First, let us recall the $\varepsilon$–$\delta$ definition:
+\[
+\forall \varepsilon > 0, \ \exists \delta > 0 \text{ such that } 0 < |x - a| < \delta \Rightarrow \left|f(x) - L\right| < \varepsilon.
+\]   
+
+
+Since we already know $\lim f(x) = L$ and $\lim g(x) = M$, then we know $\lim f(x) / \lim g(x) = L/M$, it follows:
+\[
+\lim \frac{f(x)}{g(x)} = \frac{L}{M}.
+\]
+
+
+Then in our case, we must find some $\delta$ where if $0 < |x - c| < \delta$, then:
+\[
+\left| \frac{f(x)}{g(x)} - \frac{L}{M} \right| < \varepsilon.
+\]
+
+
+To find a delta which satisfies that, let us re-arrange our equation to be more manageable:
+\[
+\left| \frac{f(x)M - g(x)L}{g(x)M} \right| < \varepsilon
+\]
+
+\[
+\frac{\left| f(x)M - g(x)L \right|}{\left| g(x)M \right|} < \varepsilon
+\]
+
+\[
+\frac{|f(x)M - f(x)L + f(x)L - g(x)L|}{|g(x)||M|}
+\]
+
+
+\[
+\frac{ \left| f(x)(M - L) \right| + \left| L(f(x) - g(x)) \right| }{ \left| g(x)M \right| } < \varepsilon
+\]
+
+
+
+Now let us bound the denominator from above, ensuring its something positive above $0$:
+\[
+|g(x)| \, |M| > \frac{|M|^2}{2}
+\]
+
+\[
+|g(x)| > \frac{|M|}{2}
+\]
+
+
+Second, let us give an upper bound to $f(x)$ since it’s not a constant. Since I previously stated we know $\lim f(x) = L$, it follows that $|f(x) - L| < \varepsilon$. Let that epsilon range be, say, 1, then:
+\[
+|f(x) - L| < 1
+\]
+
+\[
+|f(x)| < |L| + 1
+\]
+
+
+Now let us control the size of the nominator using the triangle inequality:
+\[
+|f(x)M - g(x)L| \leq |f(x)(M - L)| + |L(f(x) - g(x))| < \varepsilon
+\]
+
+\[
+|f(x)|\,|M - L| + |L|\,|f(x) - g(x)| < \varepsilon
+\]
+
+
+We make sure that each piece is a bit below $\frac{\varepsilon}{2}$, to ensure they vibe with the lower bound of the denominator, let each piece be less than $\frac{\varepsilon |M|^2}{4}$:
+\begin{align}
+|f(x)|\,|M - L| < \frac{\varepsilon |M|^2}{4} \\
+(|L| + 1) |M - L| < \frac{\varepsilon |M|^2}{4} \\
+|M - L| < \frac{\varepsilon |M|^2}{4(|L| + 1)}
+\end{align}
+
+\begin{align}
+|L|\,|f(x) - g(x)| < \frac{\varepsilon |M|^2}{4} \\
+|f(x) - g(x)| < \frac{\varepsilon |M|^2}{4 |L|}
+\end{align}
+
+
+Let $\delta = \min\left(\frac{\varepsilon |M|^2}{4(|L| + 1)}, \frac{\varepsilon |M|^2}{4|L|}\right)$ such that:
+\[
+\begin{aligned}
+|f(x)M - f(x)L + f(x)L - g(x)L| &\leq |f(x)(M - L)| + |L(f(x) - g(x))| < \varepsilon \\
+&< \left( (|L| + 1) \cdot \frac{\varepsilon |M|^2}{4(|L| + 1)} + |L| \cdot \frac{\varepsilon |M|^2}{4|L|} \right) \cdot \frac{2}{|M|^2} \\
+&= \left( \frac{\varepsilon |M|^2}{4} + \frac{\varepsilon |M|^2}{4} \right) \cdot \frac{2}{|M|^2} \\
+&= \frac{\varepsilon |M|^2}{2} \cdot \frac{2}{|M|^2} \\
+&= \varepsilon
+\end{aligned}
+\]
+
+
+
+Since for every $\varepsilon > 0$, there exist some $\delta_1$ and $\delta_2$ such that if $0 < |x - a| < \delta = \min(\delta_1, \delta_2)$, then $\left| \frac{f(x)}{g(x)} - \frac{L}{M} \right| < \varepsilon$. Hence, we have proven that the limit of a quotient is the same as the quotient of the two limits:
+\[
+\lim_{x \to a} \frac{f(x)}{g(x)} = \frac{L}{M}.
+\]
+
+
+
+
+
+
+
+
+
+\end{proof}
+\end{document}
