@@ -1,63 +1,54 @@
-Claim: lim x->a (a ⋅ f(x)) = a ⋅ lim f(x)
+Claim: lim x->a (a ⋅ f(x)) = a ⋅ L
 
 Proof
 
 
 
-We will directly prove that lim af(x) = a lim f(x) using the ε–δ definition.
-
-Since Lim f(x) = L, this is the same as saying Lim af(x) = a lim f(x) = aL.
+We will directly prove that lim af(x) = a ⋅ L using the ε–δ definition.
 
 
 
-\#1. Lim af(x) = aL:
+Let us first re-call the ε–δ definition:
 
-Given for every ε>0, there exists some δ>0, such that if 0 < |x-a| < δ then |af(x) - aL| < ε.
-
-Then we must find such a delta with the information given.
+For every ε > 0, there exists δ > 0 where if 0 < |x-a| < δ then |f(x)-L| < e.
 
 
 
-Suppose |af(x) - aL| < ε.
-
-Then |a||f(x)-L| < e.
-
-It follows |f(x)-L| < e/|a|.
-
-So let δ = e/|a|.
-
-Then |af(x) - aL| < e/|a|.
-
-Such that |f(x)-L| < e as we neede to prove.
+Then in our case, given e > 0, there exists δ > 0 where if 0 < |x-a| < δ then |af(x) - aL| < e.
 
 
 
+Now suppose 0 < |x-a| < δ, now let us check |af(x) - aL| < e such that:
 
+|af(x) - aL| < e
 
-\#2 aLim f(x) = aL:
+|a||f(x) - L| < e
 
-Given for every ε>0, there exists some δ>0, such that if 0 < |x-a| < δ then |a\[(f(x) - L]| < ε.
-
-
-Consider aLim f(x) = aL.
-
-We simply divide both sides of the equation by a.
-
-Hence, Limf(x) = L
-
-So let δ = e.
-
-Then |f(x)-L| < e as we wanted to prove.
+|f(x) - L| < e/|a|
 
 
 
-Thus, for every ε>0, there exists some δ>0, such that if 0 < |x-a| < δ then |a\[(f(x) - L]| < ε and |af(x) - aL| < ε.
+Now let delta = e/|a|, such that:
 
-Hence, we can conclude Lim af(x) = aLimf(x) = aL.
+|af(x) - aL| < e/|a|
+
+|a||f(x) - L| < e/|a|
+
+|f(x) - L| < e
+
+
+
+Then, for every epsilon, there exists a delta where if 0 < |x-a| < δ then |f(x)-L| < e.
+
+Hence, the lim x->a (a ⋅ f(x)) is indeed a ⋅ L. So we can conclude: 
+
+
+
+lim x->a (a ⋅ f(x)) = a ⋅ L
+
+
 
 
 
 Q.E.D
-
-
 

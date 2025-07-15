@@ -10,60 +10,48 @@
 \begin{proof}
 
 
-Using the $\varepsilon$–$\delta$ definition, we will prove that:
+We will directly prove that $\lim_{x \to a} af(x) = a \cdot L$ using the $\varepsilon$--$\delta$ definition.
+
+\bigskip
+
+Let us recall the $\varepsilon$--$\delta$ definition:  
+For every $\varepsilon > 0$, there exists $\delta > 0$ such that if $0 < |x - a| < \delta$, then $|f(x) - L| < \varepsilon$.
+
+\bigskip
+
+Then in our case, given $\varepsilon > 0$, we want to find a $\delta > 0$ such that if $0 < |x - a| < \delta$, then $|af(x) - aL| < \varepsilon$.
+
+\bigskip
+
+Now suppose $0 < |x - a| < \delta$. Let us analyze $|af(x) - aL|$:
+
 \[
-\lim_{x \to a} \left( a \cdot f(x) \right) = a \cdot \lim_{x \to a} f(x)
+|af(x) - aL| = |a||f(x) - L| < \varepsilon
 \]
 
+\bigskip
 
-First, let us recall the $\varepsilon$–$\delta$ definition:
-\[
-\forall \varepsilon > 0, \ \exists \delta > 0 \text{ such that } 0 < |x - a| < \delta \Rightarrow \left|f(x) - L\right| < \varepsilon.
-\]                                                                                                                                   
+To guarantee this, we need:
 
-Since $\lim_{x \to a} f(x) = L$, this is the same as saying $\lim_{x \to a} a f(x) = a \lim_{x \to a} f(x) = aL$ in our case. Then to prove our claim, we must satisfy these cases:
 \[
-1.   \forall \varepsilon1 > 0, \ \exists \delta1 > 0 \text{ such that } 0 < |x - a| < \delta1 \Rightarrow \left|a f(x) - aL\right| < \varepsilon1.
-\]
-\[
-2.   \forall \varepsilon2 > 0, \ \exists \delta2 > 0 \text{ such that } 0 < |x - a| < \delta2 \Rightarrow \left|a\left[f(x) - L\right]\right| < \varepsilon2.
+|f(x) - L| < \frac{\varepsilon}{|a|}
 \]
 
+\bigskip
 
-Suppose we re-arrange $\left|a\left[f(x) - L\right]\right|$, then:
+So, let us define $\delta = \frac{\varepsilon}{|a|}$. Then, whenever $0 < |x - a| < \delta$, it follows that:
+
 \[
-\left|a\left[f(x) - L\right]\right| \Rightarrow \left|a f(x) - aL\right|
+|f(x) - L| < \frac{\varepsilon}{|a|} \Rightarrow |a||f(x) - L| < \varepsilon \Rightarrow |af(x) - aL| < \varepsilon
 \]
 
+\bigskip
 
-Then we need only satisfy that:
-\[
-1.   \forall \varepsilon1 > 0, \ \exists \delta1 > 0 \text{ such that } 0 < |x - a| < \delta1 \Rightarrow \left|a f(x) - aL\right| < \varepsilon1.
-\]
+Thus, for every $\varepsilon > 0$, we have found a $\delta$ such that if $0 < |x - a| < \delta$, then $|af(x) - aL| < \varepsilon$.
 
+\bigskip
 
-Re-distributing the absolute value we get:
-\[
-\left| a \right| \left| f(x) - L \right| < \varepsilon
-\]
-
-
-It follows that $\left| f(x) - L \right| < \frac{\varepsilon}{\left| a \right|}$. So let $\delta = \frac{\varepsilon}{|a|}$, such that:
-\[
-|a f(x) - a L| < \frac{\varepsilon}{|a|} \implies |f(x) - L| < \varepsilon
-\]
-
-
-Thus, for every $\varepsilon > 0$, there exists some $\delta > 0$ such that if $0 < |x - a| < \delta$ then
-\[
-|a (f(x) - L)| < \varepsilon \quad \text{and} \quad |a f(x) - a L| < \varepsilon.
-\]
-
-
-Hence, we can conclude that for every $\varepsilon > 0$, there exists some $\delta > 0$ such that if $0 < |x - a| < \delta$, then:
-\[
-\lim_{x \to a} a f(x) = a \lim_{x \to a} f(x) = a L.
-\]
+Hence, $\lim_{x \to a} (a \cdot f(x)) = a \cdot L$.
 
 
 
