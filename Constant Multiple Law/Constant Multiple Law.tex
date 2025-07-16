@@ -1,0 +1,67 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm, sectsty}
+\begin{document}
+	
+\textbf{Constant Multiple Law}
+	
+\section*{Claim: $\lim_{x \to a} \left( a \cdot f(x) \right) = a \cdot L$}
+
+
+\begin{proof}
+
+
+Using the $\varepsilon$–$\delta$ definition of a limit, we will directly prove that:
+\[
+\lim_{x \to a} af(x) = a \cdot L
+\]
+
+\bigskip
+
+The definition tell us, that for every $\varepsilon > 0$, there exists a $\delta > 0$ such that if $0 < |x - a| < \delta$, then $|f(x) - L| < \varepsilon$.
+
+\bigskip
+
+Suppose $0 < |x - a| < \delta$. Let us analyze the distance from the limit point:
+
+\[
+|af(x) - aL| = |a||f(x) - L|.
+\]
+
+
+We're looking for when:
+\[
+|af(x) - aL| < \varepsilon.
+\]
+
+From scratch work, this will happen if:
+\[
+|f(x) - L| < \frac{\varepsilon}{|a|}.
+\]
+
+\bigskip
+
+So we choose:
+\[
+\delta = \frac{\varepsilon}{|a|}.
+\]
+
+\bigskip
+
+Then, for every $\varepsilon > 0$, there exists a $\delta > 0$ (namely, $\delta = \varepsilon/|a|$) such that if $0 < |x - a| < \delta$, then
+\[
+|f(x) - L| < \frac{\varepsilon}{|a|} \quad \Rightarrow \quad |af(x) - aL| < \varepsilon.
+\]
+
+\bigskip
+
+Hence, we can conclude from the definition of a limit:
+\[
+\lim_{x \to a} af(x) = a \cdot L.
+\]
+
+
+
+
+
+\end{proof}
+\end{document}

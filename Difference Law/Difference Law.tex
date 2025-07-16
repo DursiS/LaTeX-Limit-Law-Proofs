@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm, sectsty}
+
+\begin{document}
+	
+\textbf{Sum Law}
+
+\section*{Claim: $\lim_{x \to a} [f(x) - g(x)] = M - N$}
+
+
+\begin{proof}
+
+Using the $\varepsilon$–$\delta$ definition of a limit, we will directly prove that:
+\[
+\lim_{x \to a} [f(x) - g(x)] = M - N
+\]
+
+The definition tell us, that for every $\varepsilon > 0$, there exists a $\delta > 0$ such that if $0 < |x - a| < \delta$, then $|f(x) - L| < \varepsilon$.
+
+Suppose $0 < |x - a| < \delta$. Let us analyze the distance between the function and its limit value:
+\[
+| (f(x) - g(x)) - (M - N) | = | (f(x) - M) - (g(x) - N) |
+\]
+
+Using the triangle inequality, we estimate the difference as follows:
+\[
+|(f(x) - M) - (g(x) - N)| \leq |f(x) - M| + |g(x) - N| < \varepsilon
+\]
+
+
+Since the whole, and the sum of its two parts is below $\varepsilon$. We can estimate each part by saying they are below $\frac{\varepsilon}{2}$:
+\[
+|f(x) - M| < \frac{\varepsilon}{2}
+\]
+\[
+|g(x) - N| < \frac{\varepsilon}{2}
+\]
+So let $\delta_1$ and $\delta_2$ both equal to $\frac{\varepsilon}{2}$.
+
+
+Now choose $\delta = \min(\delta_1, \delta_2)$:
+\[
+\begin{aligned}
+| (f(x) - g(x)) - (M - N) | 
+&= | (f(x) - M) - (g(x) - N) | \\
+&\leq |f(x) - M| + |g(x) - N| \\
+&< \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+\end{aligned}
+\]
+
+Hence, for every $\varepsilon > 0$, there exists a $\delta > 0$ such that if $0 < |x - c| < \delta$, then $|f(x) - g(x) - (M - N)| < \varepsilon$. Thus, we can conclude:
+\[
+\lim_{x \to c} [f(x) - g(x)] = M - N.
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hence, for every $\varepsilon > 0$, there exists a $\delta > 0$ such that if $0 < |x - c| < \delta$, then 
+$|f(x) - L| < \varepsilon$. Thus, we can conclude:
+\[
+\lim_{x \to c} [f(x) - g(x)] = M - N
+\]
+
+
+
+\end{proof}
+
+\end{document}
