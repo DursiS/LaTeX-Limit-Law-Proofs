@@ -62,29 +62,17 @@ Let us first analyse the distance between the function and limit point:
 
 = |f(x) ⋅ f(x)^n - M ⋅ M^n|
 
-= |f(x) ⋅ f(x)^n + f(x)M^n - f(x)M^n - M ⋅ M^n| 
+= |f(x) ⋅ f(x)^n + f(x)M^n - f(x)M^n - M ⋅ M^n|
 
 <= |f(x)| ⋅ |f(x)^n + M^n| - |M^n| ⋅ |f(x) - M|
 
 
 
-Such that 
+Such that
 
 |f(x)| ⋅ |f(x)^n + M^n| < e/2
 
 |M^n| ⋅ |f(x) - M| < e/2
-
-
-
-Since |f(x) - M| < e when |x-a| < delta1, then:
-
-|f(x)| < 1/2
-
-
-
-And since |f(x)^n - M^n| < e when |x-a| < delta2, then:
-
-|M^n| < 1/2
 
 
 
@@ -96,7 +84,7 @@ Choose delta = min(delta1, delta2), such that:
 
 
 
-e/2 = |M^n| ⋅ e2
+e/2 > |M^n| ⋅ e2
 
 so let e2 = e/2|M^n|
 
@@ -106,7 +94,7 @@ Such that the total is below epsilon.
 
 
 
-Hence, the formula holds for when n+1 is even.
+Hence, the formula holds for n+1.
 
 
 
