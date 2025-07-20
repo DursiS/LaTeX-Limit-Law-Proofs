@@ -110,7 +110,7 @@ Then by induction the law holds for all neN.
 
 
 
-Hence, for every e > 0, there exists a delta > 0 where if 0 < |x-c| < d, then |f(x) - L| < e. Thus, we can conclude:
+Hence, for every e > 0, there exists a delta > 0 where if 0 < |x-c| < d, then |f(x)^n - L^n| < e. Thus, we can conclude:
 
 
 
