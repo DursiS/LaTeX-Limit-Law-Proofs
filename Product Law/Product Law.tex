@@ -1,0 +1,93 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm, sectsty}
+
+\begin{document}
+	
+\textbf{Sum Law}
+
+\section*{Claim: $lim_{x \to a} [f(x) \cdot g(x)] = M \cdot N$}
+
+
+\begin{proof}
+
+Using the $\varepsilon$–$\delta$ definition of a limit, we will directly prove that:
+\[
+\lim_{x \to a} [f(x) \cdot g(x)] = M \cdot N
+\]
+
+The definition tell us, that for every $\varepsilon > 0$, there exists a $\delta > 0$ such that if $0 < |x - a| < \delta$, then $|f(x) - L| < \varepsilon$.
+
+Suppose $0 < |x - a| < \delta$. Let us analyze the distance between the function and its limit value:
+\[
+|f(x)g(x) - MN| = \left| f(x)(g(x) - N) + N(f(x) - M) \right| \leq |f(x)||g(x) - N| + |N||f(x) - M|
+\]
+
+
+Since $|f(x)g(x) - MN| \leq |f(x)||g(x) - N| + |N||f(x) - M|$, we can ensure the whole is less than $\varepsilon$ by making each part less than $\frac{\varepsilon}{2}$, thus we require:
+\[
+|f(x)||g(x) - N| < \frac{\varepsilon}{2}, \quad \text{and} \quad |N||f(x) - M| < \frac{\varepsilon}{2}.
+\]
+
+Choose $\delta1 = e/2|N|$ so it satisfies that:
+\[
+|f(x) - M| < e/2|N|
+\]
+
+Now we bound $|f(x)|$, choose $\delta_2 = \frac{\varepsilon + 2|N||M|}{2|N|}$, then:
+\[
+|f(x)| < e/2|N| + |M|
+\]
+
+And choose $\delta_3 = \frac{\varepsilon |N|}{\varepsilon + 2|N||M|}$ such that:
+\[
+|g(x) - N| < \frac{\varepsilon |N|}{\varepsilon + 2|N||M|}
+\]
+
+\[
+\text{Let } \delta = \min\left( \frac{\varepsilon}{2|N|}, \; \frac{\varepsilon + 2|N||M|}{2|N|}, \; \frac{\varepsilon |N|}{\varepsilon + 2|N||M|} \right)
+\]
+
+Then, for all \( x \) such that \( 0 < |x - a| < \delta \), we have:
+
+\[
+|f(x)g(x) - MN| 
+\leq |f(x)||g(x) - N| + |N||f(x) - M|
+\]
+
+Now, since \( |f(x)| < \dfrac{\varepsilon + 2|N||M|}{2|N|} \) and \( |g(x) - N| < \dfrac{\varepsilon |N|}{\varepsilon + 2|N||M|} \), we get:
+
+\[
+|f(x)||g(x) - N| 
+< \left( \frac{\varepsilon + 2|N||M|}{2|N|} \right)
+\left( \frac{\varepsilon |N|}{\varepsilon + 2|N||M|} \right) 
+= \frac{\varepsilon}{2}
+\]
+
+Also, since \( |f(x) - M| < \dfrac{\varepsilon}{2|N|} \), we have:
+
+\[
+|N||f(x) - M| < |N| \cdot \frac{\varepsilon}{2|N|} = \frac{\varepsilon}{2}
+\]
+
+Thus,
+
+\[
+|f(x)g(x) - MN| 
+< \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+\]
+
+Therefore, for every $\varepsilon > 0$, there exists a $\delta > 0$ such that if $0 < |x - a| < \delta$, then:
+\[
+|f(x)g(x) - MN| < \varepsilon
+\]
+
+Hence, by the $\varepsilon–\delta$ definition of limit:
+\[
+\lim_{x \to a} [f(x) \cdot g(x)] = M \cdot N
+\]
+
+
+
+\end{proof}
+
+\end{document}

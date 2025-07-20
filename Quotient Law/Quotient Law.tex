@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm, sectsty}
+
+\begin{document}
+
+\textbf{Sum Law}
+
+\section*{Claim: $\lim_{x \to a} [f(x) - g(x)] = M - N$}
+
+
+\begin{proof}
+
+Provided that $\lim_{x \to c} f(x) = M, \quad \lim_{x \to c} g(x) = N, \quad \text{and } N \neq 0.$ Using the $\varepsilon$–$\delta$ definition of a limit, we will directly prove that:
+\[
+\lim_{x \to c} \frac{f(x)}{g(x)} = \frac{M}{N}
+\]
+
+
+The definition tell us, that for every $\varepsilon > 0$, there exists a $\delta > 0$ such that if $0 < |x - a| < \delta$, then $|f(x) - L| < \varepsilon$.
+
+Suppose $0 < |x - a| < \delta$. Let us analyze the distance between the function and its limit value:
+\[
+|f(x)/g(x) - M/N| = |f(x)(N - M) + M(f(x) - g(x)| / |g(x)N|
+\]
+
+Then using the triangle inequality, we can estimate each part as follows:
+\[
+\left| \frac{f(x)(N - M) + M(f(x) - g(x))}{g(x)N} \right|
+\leq \frac{|f(x)||N - M| + |M||f(x) - g(x)|}{|g(x)N|}
+\]
+
+Hence, for every $\varepsilon > 0$, there exists a $\delta > 0$ such that if $0 < |x - c| < \delta$, then $|f(x) - g(x) - (M - N)| < \varepsilon$. Thus, we can conclude:
+\[
+\lim_{x \to c} [f(x) - g(x)] = M - N.
+\]
+
+To put a lower bound on $|g(x)|$, choose $\delta_1 = \frac{|N|^2}{2}$ such that if $|g(x) - N| < \delta_1$, then:
+\[
+|g(x)||N| > \frac{|N|^2}{2}
+\quad \Rightarrow \quad
+\frac{1}{|g(x)||N|} < \frac{2}{|N|^2}
+\]
+
+Then we can represent the total as:
+\[
+\frac{|f(x)||N - M| + |M||f(x) - g(x)|}{|g(x)||N|}
+< \left( |f(x)||N - M| + |M||f(x) - g(x)| \right) \cdot \frac{2}{|N|^2}
+< \epsilon
+\]
+
+Since the total expression is to be bounded by $\epsilon$, choose $\delta_2 = \frac{\epsilon |N|}{4}$. We can bound each part individually as follows:
+\[
+|f(x)||N - M| < \frac{\epsilon |N|}{4}
+\quad \text{and} \quad
+|M||f(x) - g(x)| < \frac{\epsilon |N|}{4}
+\]
+
+Bounding $|f(x)|$, choose $\delta_3 = 1 + |L|$ such that:
+\[
+|f(x)| < 1 + |L|
+\]
+
+Since $|f(x)|$ is bounded. Choose $\delta_4 = e|N|/4(1 + |L|)$, it follows that:
+\[
+|f(x)||N - M| < \frac{\epsilon |N|}{4} 
+\quad \Rightarrow \quad
+|N - M| < \frac{\epsilon |N|}{4(1 + |L|)}
+\]
+
+
+Now choose $
+\delta = \min \left(
+\frac{2}{|N|}, \quad
+\frac{\epsilon |N|}{4|M|}, \quad
+1 + |L|, \quad
+\frac{\epsilon |N|}{4(1 + |L|)}
+\right) $ such that:
+
+\[
+\frac{|f(x)||N - M| + |M||f(x) - g(x)|}{|g(x)N|}
+< \left[
+(1 + |L|) \cdot \frac{\epsilon |N|}{4(1 + |L|)} \; + \; |M| \cdot \frac{\epsilon |N|}{4|M|}
+\right] \cdot \frac{2}{|N|}
+\]
+
+Simplifying the right side:
+
+\[
+= \left[ \frac{\epsilon |N|}{4} + \frac{\epsilon |N|}{4} \right] \cdot \frac{2}{|N|}
+= \frac{\epsilon |N|}{2} \cdot \frac{2}{|N|}
+= \epsilon
+\]
+
+Hence, for every \( \epsilon > 0 \), there exists a \( \delta > 0 \) such that if \( 0 < |x - c| < \delta \), then:
+
+\[
+\left| \frac{f(x)}{g(x)} - \frac{L}{M} \right| < \epsilon
+\]
+
+Thus, we conclude:
+\[
+\lim_{x \to c} \frac{f(x)}{g(x)} = \frac{L}{M}
+\]
+
+\end{proof}
+
+\end{document}
