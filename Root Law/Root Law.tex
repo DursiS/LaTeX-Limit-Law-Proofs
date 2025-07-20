@@ -1,0 +1,126 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm, sectsty}
+
+\begin{document}
+	
+	\textbf{Root Law}
+	
+	\section*{Claim: $\lim_{x \to a} f(x)^{1/n} = M^{1/n}$}
+
+	
+	\begin{proof}
+		
+		Provided that $\lim_{x \to c} f(x) = M, \quad \lim_{x \to c} g(x) = N, \quad \text{and } N \neq 0.$ Using the $\varepsilon$–$\delta$ definition of a limit, we will prove by induction that for all n $\in \mathbb{N}$:
+		\[
+		\lim_{x \to a} f(x)^1/n = M^1/n
+		\]
+		
+		The definition tell us, that for every $\varepsilon > 0$, there exists a $\delta > 0$ such that if $0 < |x - a| < \delta$, then $|f(x) - L| < \varepsilon$.
+		
+		
+		Suppose $0 < |x - a| < \delta$. In a base case of $n = 1$:
+		\[
+		|f(x)^1/1 - M^1/1| = |f(x) - M|
+		\]
+		
+		Now suppose $|x - a| < \delta$, it follows that:
+		\[
+		|f(x) - M| < \epsilon
+		\]
+		
+		Hence, the base case of $n = 1$ holds.
+		
+		\vspace{1cm}
+		
+		Assume $\lim_{x \to a} f(x)^{1/n} = M^{1/n}$ holds for all $n \in \mathbb{N}$.
+		
+		Now suppose $|x - a| < \delta$, it follows that:
+		\[
+		|f(x)^{1/n} - M^{1/n}| < \epsilon
+		\]
+		
+		Using this assumption, we must show that $\lim_{x \to a} f(x)^{1/n+1} = M^{1/n+1}$ holds as well.
+		
+		Let us first analyze the distance between the function and its limit point:
+		
+		\[
+		|f(x)^{1/n+1} - M^{1/n+1}| 
+		= |f(x)^{1/1} \cdot f(x)^{1/n} - M^{1/1} \cdot M^{1/n}|
+		\]
+		
+		\[
+		= |f(x) \cdot f(x)^{1/n} - f(x) \cdot M^{1/n} + f(x) \cdot M^{1/n} - M \cdot M^{1/n}|
+		\]
+		
+		\[
+		= |f(x)(f(x)^{1/n} - M^{1/n}) + M^{1/n}(f(x) - M)|
+		\]
+		
+		Now apply the triangle inequality:
+		
+		\[
+		\leq |f(x)| \cdot |f(x)^{1/n} - M^{1/n}| + |M^{1/n}| \cdot |f(x) - M|
+		\]
+		
+		Such that:
+		\[
+		|f(x)| \cdot |f(x)^{1/n} - M^{1/n}| < \frac{\epsilon}{2}
+		\]
+		\[
+		|M^{1/n}| \cdot |f(x) - M| < \frac{\epsilon}{2}
+		\]
+		
+		Since \( |f(x) - M| < \epsilon_1 \) whenever \( |x - a| < \delta_1 \), and
+		\( |f(x)^{1/n} - M^{1/n}| < \epsilon_2 \) whenever \( |x - a| < \delta_2 \),  
+		choose
+		\[
+		\delta = \min(\delta_1, \delta_2)
+		\]
+		
+		Then, for all \( x \) such that \( 0 < |x - a| < \delta \), we have:
+		\[
+		|f(x)^{1/n+1} - M^{1/n+1}| 
+		\leq |f(x)| \cdot |f(x)^{1/n} - M^{1/n}| + |M^{1/n}| \cdot |f(x) - M|
+		< |f(x)| \cdot \epsilon_2 + |M^{1/n}| \cdot \epsilon_1
+		\]
+		
+		Now choose \( \epsilon_1 = \frac{\epsilon}{2|M^{1/n}|} \)  
+		and \( \epsilon_2 = \frac{\epsilon}{2|f(x)|} \)  
+		so the total is less than \( \epsilon \).
+		
+		Hence, the formula holds for \( n+1 \).
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	\end{proof}
+	
+\end{document}
